@@ -1,8 +1,5 @@
 $(function () {
-
-
-
-    loadPosts()
+loadPosts()
     .then(function (postResponse) {
         console.log("Post response: ", postResponse)
         posts = postResponse;
@@ -12,11 +9,18 @@ $(function () {
         alert('Error loading user info')
     });
 
+document.querySelector('.menu').addEventListener('click', function() {
+    document.querySelector('.dropdown').classList.toggle('active');
+  });
 
-
-
+  loadUserInfo()
+        .then(function (user) {
+            displayUserInfo(user)
+        })
+        .catch(function () {
+            alert('Error loading user info')
+        });
 });
-
 
 function displayPost(posts) {
     for (let i = 0; i < posts.length; i++) {
@@ -61,6 +65,11 @@ function loadPosts() {
     return $.get(
         {
             url: 'https://private-anon-e0d4b76204-wad20postit.apiary-mock.com/posts',
+function loadUserInfo() {
+    return $.get(
+        {
+            url: 'https://private-anon-e0d4b76204-wad20postit.apiary-mock.com/users/1',
+
             success: function (response) {
                 return response;
             },
@@ -69,4 +78,9 @@ function loadPosts() {
             }
         }
     );
+
+}
+function displayUserInfo(user) {
+    $('#info').text(user.firstname + " " + user.lastname + '\n' + user.email);
+    $('.avatar').attr('src', user.avatar);
 }
