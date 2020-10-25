@@ -202,3 +202,45 @@ nav div.avatar-container {
 .like-button.liked {
     background-color: #01579b;
 }
+
+.dropdown {
+    /* Size & position */
+    position: absolute;
+    top: 65%;
+    left: 80%;
+    right: 0;
+    padding: 0;
+
+    /* Styles */
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-top: none;
+    border-bottom: none;
+    list-style: none;
+    transition: all 0.3s ease-out;
+
+    visibility: hidden;
+    opacity: 0;
+}
+
+.dropdown li {
+    padding: 0;
+    text-align: left;
+}
+.dropdown li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px 10px 10px;
+    transition: all 0.3s ease-out;
+    border-bottom: 1px solid #e6e8ea;
+}
+.dropdown li:last-of-type a {
+    border: none;
+}
+.dropdown.active {
+    visibility: visible;
+    opacity: 1;
+    transition: all .2s ease-in-out;
+  }
