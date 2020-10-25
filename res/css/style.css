@@ -203,6 +203,52 @@ nav div.avatar-container {
     background-color: #01579b;
 }
 
+
+.grid-container {
+    display: grid;
+    background-color: white;
+    grid-template-columns:auto auto;
+    grid-gap: 10px 10px;
+    align-items: center;
+}
+
+.grid-container > div {
+    background-color: white;
+    border-style: solid;
+    border-color: lightsteelblue;
+    border-radius: 10px;
+    border-width: 2px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 15px;
+}
+
+.grid-container div img {
+    height: 70px;
+    border-radius: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    object-fit: cover;
+    width: 70px;
+}
+
+.follow-button{
+    align-items: center;
+    background-color: purple; /*button color*/
+    border: 2px solid purple; /*border color*/
+    border-radius: 5px;
+    color:white; /*text color*/
+    margin-top: 20px;
+}
+.follow-button.followed {
+    background-color: white; /*button color*/
+    color: purple; /*text color*/
+
+}
+
 .dropdown {
     /* Size & position */
     position: absolute;
